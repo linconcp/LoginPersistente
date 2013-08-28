@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">LoginPersistente</string>
+    <string name="action_settings">Settings</string>
+    <string name="entrada_email">E-Mail</string>
+    <string name="entrada_senha">Senha</string>
+    <string name="botaoEntrar">Entrar</string>
+    <string name="title_activity_bemvindo">Bem-vindo!</string>
+
+</resources>
