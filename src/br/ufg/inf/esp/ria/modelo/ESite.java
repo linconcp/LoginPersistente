@@ -7,7 +7,7 @@ import org.droidpersistence.annotation.Table;
 @Table(name = "site")
 public class ESite {
 
-  @PrimaryKey
+  @PrimaryKey(autoIncrement=true)
   @Column(name = "id")
   private Long id;
 

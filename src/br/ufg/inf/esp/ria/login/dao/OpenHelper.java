@@ -1,5 +1,7 @@
 package br.ufg.inf.esp.ria.login.dao;
 
+import br.ufg.inf.esp.ria.login.dao.tableDefinition.SiteTableDefinition;
+import br.ufg.inf.esp.ria.login.dao.tableDefinition.UsuarioTableDefinition;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;

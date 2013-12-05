@@ -7,5 +7,6 @@
     <string name="entrada_senha">Senha</string>
     <string name="botaoEntrar">Entrar</string>
     <string name="title_activity_bemvindo">Bem-vindo!</string>
+    <string name="title_activity_meunavegador">Navegador</string>
 
 </resources>

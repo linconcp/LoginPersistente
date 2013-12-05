@@ -12,10 +12,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
-import br.ufg.inf.esp.ria.login.loginpersistente.R.id;
 import br.ufg.inf.esp.ria.login.loginpersistente.R.layout;
+import br.ufg.inf.esp.ria.modelo.ESite;
 
 public final class Bemvindo_
     extends Bemvindo
@@ -33,11 +35,30 @@ public final class Bemvindo_
         injectExtras_();
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN, android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        download = DownloadSites_.getInstance_(this);
+        listaSiteAdapter = ListaSiteAdapter_.getInstance_(this);
     }
 
     private void afterSetContentView_() {
-        listaFavoritos = ((ListView) findViewById(id.listaFavoritos));
-        tvBemvindo = ((TextView) findViewById(id.tvBemvindo));
+        tvBemvindo = ((TextView) findViewById(br.ufg.inf.esp.ria.login.loginpersistente.R.id.tvBemvindo));
+        listaFavoritos = ((ListView) findViewById(br.ufg.inf.esp.ria.login.loginpersistente.R.id.listaFavoritos));
+        {
+            AdapterView<?> view = ((AdapterView<?> ) findViewById(br.ufg.inf.esp.ria.login.loginpersistente.R.id.listaFavoritos));
+            if (view!= null) {
+                view.setOnItemClickListener(new OnItemClickListener() {
+
+
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        listaFavoritosItemCliked(((ESite) parent.getAdapter().getItem(position)));
+                    }
+
+                }
+                );
+            }
+        }
+        ((DownloadSites_) download).afterSetContentView_();
+        ((ListaSiteAdapter_) listaSiteAdapter).afterSetContentView_();
         iniciar();
     }
 

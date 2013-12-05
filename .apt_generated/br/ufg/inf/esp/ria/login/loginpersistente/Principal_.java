@@ -15,7 +15,7 @@ import android.view.Window;
 import android.widget.EditText;
 import br.ufg.inf.esp.ria.login.loginpersistente.R.id;
 import br.ufg.inf.esp.ria.login.loginpersistente.R.layout;
-import br.ufg.inf.esp.ria.modelo.ELogado_;
+import br.ufg.inf.esp.ria.modelo.preferencias.ELogado_;
 
 public final class Principal_
     extends Principal
@@ -36,8 +36,8 @@ public final class Principal_
     }
 
     private void afterSetContentView_() {
-        entradaUsuario = ((EditText) findViewById(id.entrada_usuario));
         entradaSenha = ((EditText) findViewById(id.entrada_senha));
+        entradaUsuario = ((EditText) findViewById(id.entrada_usuario));
         {
             View view = findViewById(id.button1);
             if (view!= null) {
