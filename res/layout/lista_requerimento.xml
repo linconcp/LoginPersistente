@@ -1,36 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/TableLayout1"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical" >
+    android:layout_height="match_parent"
+    android:shrinkColumns="*"
+    android:stretchColumns="*" >
 
-    <TextView
-        android:id="@+id/tipoRequerimento"
-        android:layout_width="match_parent"
+    <TableRow
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textIsSelectable="true"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+        android:gravity="center_horizontal" >
 
-    <TextView
-        android:id="@+id/dataCadastro"
-        android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/lblTipoRequerimento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tipoRequerimento"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/tipoRequerimento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:editable="false"
+            android:ems="10"
+            android:focusable="false" >
+
+            <requestFocus />
+        </EditText>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textIsSelectable="true"
-        android:textSize="12sp" />
+        android:gravity="center_horizontal" >
 
-    <TextView
-        android:id="@+id/situacao"
-        android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/lblDataCadastro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dataCadastro"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/dataCadastro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:editable="false"
+            android:ems="10"
+            android:focusable="false" >
+        </EditText>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textIsSelectable="true"
-        android:textSize="12sp" />
+        android:gravity="center_horizontal" >
 
-    <TextView
-        android:id="@+id/dataSituacao"
-        android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/lblSituacaoAtual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/situacaoAtual"
+            android:textIsSelectable="true"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/situacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:editable="false"
+            android:ems="10"
+            android:focusable="false" >
+        </EditText>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textIsSelectable="true"
-        android:textSize="12sp" />
+        android:gravity="center_horizontal" >
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/lblDataSituacao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dataSituacao"
+            android:textIsSelectable="true"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/dataSituacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:editable="false"
+            android:ems="10"
+            android:focusable="false" >
+        </EditText>
+    </TableRow>
+
+</TableLayout>

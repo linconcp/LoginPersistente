@@ -2,8 +2,8 @@ package br.ufg.inf.esp.ria.login.loginpersistente;
 
 import android.content.Context;
 import android.text.format.DateFormat;
+import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import br.ufg.inf.esp.ria.modelo.ERequerimento;
 
 import com.googlecode.androidannotations.annotations.EViewGroup;
@@ -13,16 +13,16 @@ import com.googlecode.androidannotations.annotations.ViewById;
 public class ItemRequerimentoView extends LinearLayout {
 
   @ViewById
-  TextView tipoRequerimento;
+  EditText tipoRequerimento;
 
   @ViewById
-  TextView dataCadastro;
+  EditText dataCadastro;
 
   @ViewById
-  TextView situacao;
+  EditText situacao;
 
   @ViewById
-  TextView dataSituacao;
+  EditText dataSituacao;
 
   public ItemRequerimentoView(Context context) {
     super(context);

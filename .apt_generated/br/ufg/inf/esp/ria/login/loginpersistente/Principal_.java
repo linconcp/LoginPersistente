@@ -36,8 +36,8 @@ public final class Principal_
     }
 
     private void afterSetContentView_() {
-        entradaSenha = ((EditText) findViewById(id.entrada_senha));
         entradaUsuario = ((EditText) findViewById(id.entrada_usuario));
+        entradaSenha = ((EditText) findViewById(id.entrada_senha));
         {
             View view = findViewById(id.button1);
             if (view!= null) {

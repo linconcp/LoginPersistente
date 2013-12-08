@@ -34,30 +34,15 @@ public final class Bemvindo_
         injectExtras_();
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN, android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        downloadEmenta = DownloadEmenta_.getInstance_(this);
-        listaRequerimentoAdapter = ListaRequerimentoAdapter_.getInstance_(this);
         downloadRequerimento = DownloadRequerimento_.getInstance_(this);
         listaEmentaAdapter = ListaEmentaAdapter_.getInstance_(this);
+        listaRequerimentoAdapter = ListaRequerimentoAdapter_.getInstance_(this);
+        downloadEmenta = DownloadEmenta_.getInstance_(this);
     }
 
     private void afterSetContentView_() {
-        listaFavoritos = ((ListView) findViewById(id.listaFavoritos));
         tvBemvindo = ((TextView) findViewById(id.tvBemvindo));
-        {
-            View view = findViewById(id.consultarEmenta);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        Bemvindo_.this.consultarEmenta(view);
-                    }
-
-                }
-                );
-            }
-        }
+        listaFavoritos = ((ListView) findViewById(id.listaFavoritos));
         {
             View view = findViewById(id.consultarSolicitacao);
             if (view!= null) {
@@ -73,10 +58,25 @@ public final class Bemvindo_
                 );
             }
         }
-        ((DownloadEmenta_) downloadEmenta).afterSetContentView_();
-        ((ListaRequerimentoAdapter_) listaRequerimentoAdapter).afterSetContentView_();
+        {
+            View view = findViewById(id.consultarEmenta);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        Bemvindo_.this.consultarEmenta(view);
+                    }
+
+                }
+                );
+            }
+        }
         ((DownloadRequerimento_) downloadRequerimento).afterSetContentView_();
         ((ListaEmentaAdapter_) listaEmentaAdapter).afterSetContentView_();
+        ((ListaRequerimentoAdapter_) listaRequerimentoAdapter).afterSetContentView_();
+        ((DownloadEmenta_) downloadEmenta).afterSetContentView_();
         iniciar();
     }
 

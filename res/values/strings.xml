@@ -10,4 +10,8 @@
     <string name="consultarEmenta">Consultar Ementa</string>
     <string name="title_activity_bemvindo">Bem-vindo!</string>
     <string name="title_activity_meunavegador">Navegador</string>
+    <string name="tipoRequerimento">Tipo de Requerimento:</string>
+    <string name="dataCadastro">Data de Cadastro:</string>
+    <string name="situacaoAtual">Situação Atual:</string>
+    <string name="dataSituacao">Data alteração situação:</string>
 </resources>
