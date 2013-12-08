@@ -19,7 +19,7 @@ import com.googlecode.androidannotations.annotations.UiThread;
 public class DownloadRequerimento {
 
   private ProgressDialog dialog;
-  private final String URL = "https://dl.dropboxusercontent.com/s/t330gbimrkg5zd3/requerimentos.json";
+  private final String URL = "https://dl.dropbox.com/s/kueyz2v7iga74m3/requerimentos.json";
 
   @UiThread
   public void execute(Bemvindo minhaTela) {

@@ -23,9 +23,9 @@
             android:id="@+id/tipoRequerimento"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:editable="false"
             android:ems="10"
-            android:focusable="false" >
+            android:focusable="false"
+            android:inputType="none" >
 
             <requestFocus />
         </EditText>
@@ -48,9 +48,9 @@
             android:id="@+id/dataCadastro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:editable="false"
             android:ems="10"
-            android:focusable="false" >
+            android:focusable="false"
+            android:inputType="none" >
         </EditText>
     </TableRow>
 
@@ -72,9 +72,9 @@
             android:id="@+id/situacao"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:editable="false"
             android:ems="10"
-            android:focusable="false" >
+            android:focusable="false"
+            android:inputType="none" >
         </EditText>
     </TableRow>
 
@@ -96,9 +96,9 @@
             android:id="@+id/dataSituacao"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:editable="false"
             android:ems="10"
-            android:focusable="false" >
+            android:focusable="false"
+            android:inputType="none" >
         </EditText>
     </TableRow>
 

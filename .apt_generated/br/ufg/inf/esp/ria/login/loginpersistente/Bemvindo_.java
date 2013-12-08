@@ -34,10 +34,10 @@ public final class Bemvindo_
         injectExtras_();
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN, android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        downloadEmenta = DownloadEmenta_.getInstance_(this);
         downloadRequerimento = DownloadRequerimento_.getInstance_(this);
         listaEmentaAdapter = ListaEmentaAdapter_.getInstance_(this);
         listaRequerimentoAdapter = ListaRequerimentoAdapter_.getInstance_(this);
-        downloadEmenta = DownloadEmenta_.getInstance_(this);
     }
 
     private void afterSetContentView_() {
@@ -73,10 +73,10 @@ public final class Bemvindo_
                 );
             }
         }
+        ((DownloadEmenta_) downloadEmenta).afterSetContentView_();
         ((DownloadRequerimento_) downloadRequerimento).afterSetContentView_();
         ((ListaEmentaAdapter_) listaEmentaAdapter).afterSetContentView_();
         ((ListaRequerimentoAdapter_) listaRequerimentoAdapter).afterSetContentView_();
-        ((DownloadEmenta_) downloadEmenta).afterSetContentView_();
         iniciar();
     }
 

@@ -1,11 +1,10 @@
 package br.ufg.inf.esp.ria.login.dao;
 
-import br.ufg.inf.esp.ria.login.dao.tableDefinition.SiteTableDefinition;
-import br.ufg.inf.esp.ria.login.dao.tableDefinition.UsuarioTableDefinition;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
+import br.ufg.inf.esp.ria.login.dao.tableDefinition.UsuarioTableDefinition;
 
 public class OpenHelper extends SQLiteOpenHelper {
 
@@ -26,9 +25,6 @@ public class OpenHelper extends SQLiteOpenHelper {
     try {
       UsuarioTableDefinition usuarioTableDefinition = new UsuarioTableDefinition();
       usuarioTableDefinition.onCreate(db);
-
-      SiteTableDefinition siteTableDefinition = new SiteTableDefinition();
-      siteTableDefinition.onCreate(db);
     } catch (Exception e) {
       e.printStackTrace();
     }
@@ -39,9 +35,6 @@ public class OpenHelper extends SQLiteOpenHelper {
     try {
       UsuarioTableDefinition usuarioTableDefinition = new UsuarioTableDefinition();
       usuarioTableDefinition.onUpgrade(db, oldVersion, newVersion);
-
-      SiteTableDefinition siteTableDefinition = new SiteTableDefinition();
-      siteTableDefinition.onUpgrade(db, oldVersion, newVersion);
     } catch (Exception e) {
       e.printStackTrace();
     }
