@@ -3,10 +3,11 @@
 
     <string name="app_name">LoginPersistente</string>
     <string name="action_settings">Settings</string>
-    <string name="entrada_email">E-Mail</string>
-    <string name="entrada_senha">Senha</string>
+    <string name="entrada_email">Usuário:</string>
+    <string name="entrada_senha">Senha:</string>
     <string name="botaoEntrar">Entrar</string>
+    <string name="consultarSolicitacao">Consultar Solicitações</string>
+    <string name="consultarEmenta">Consultar Ementa</string>
     <string name="title_activity_bemvindo">Bem-vindo!</string>
     <string name="title_activity_meunavegador">Navegador</string>
-
 </resources>

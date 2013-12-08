@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public abstract class DataManager {
   private static final String BANCO_DADOS = "teste.db";
-  private static final Integer BANCO_VERSAO = 1;
+  private static final Integer BANCO_VERSAO = 2;
 
   public static final SQLiteDatabase getDatabase(Context contexto) {
     SQLiteOpenHelper openHelper = new OpenHelper(contexto, BANCO_DADOS, null, BANCO_VERSAO);

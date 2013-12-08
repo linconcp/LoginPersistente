@@ -11,7 +11,7 @@ import com.googlecode.androidannotations.annotations.Fullscreen;
 import com.googlecode.androidannotations.annotations.NoTitle;
 import com.googlecode.androidannotations.annotations.ViewById;
 
-@EActivity(R.layout.navegador)
+@EActivity(R.layout.navegador) 
 @NoTitle
 @Fullscreen
 public class MeuNavegador extends Activity {

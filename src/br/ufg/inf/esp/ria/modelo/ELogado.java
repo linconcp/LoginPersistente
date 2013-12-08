@@ -4,6 +4,5 @@ import com.googlecode.androidannotations.annotations.sharedpreferences.SharedPre
 
 @SharedPref
 public interface ELogado {
-  
-    String identificacao();
+  String identificacao();
 }

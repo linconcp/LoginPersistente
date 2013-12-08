@@ -5,8 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+import br.ufg.inf.esp.ria.modelo.ELogado_;
 import br.ufg.inf.esp.ria.modelo.EUsuario;
-import br.ufg.inf.esp.ria.modelo.preferencias.ELogado_;
 import br.ufg.inf.esp.ria.negocio.NUsuario;
 
 import com.googlecode.androidannotations.annotations.Click;

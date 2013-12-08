@@ -7,17 +7,18 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.Log;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
-import br.ufg.inf.esp.ria.modelo.ESite;
-import br.ufg.inf.esp.ria.negocio.NSite;
+import br.ufg.inf.esp.ria.modelo.EEmenta;
+import br.ufg.inf.esp.ria.modelo.ERequerimento;
 
 import com.googlecode.androidannotations.annotations.AfterViews;
 import com.googlecode.androidannotations.annotations.Bean;
+import com.googlecode.androidannotations.annotations.Click;
 import com.googlecode.androidannotations.annotations.EActivity;
 import com.googlecode.androidannotations.annotations.Extra;
 import com.googlecode.androidannotations.annotations.Fullscreen;
-import com.googlecode.androidannotations.annotations.ItemClick;
 import com.googlecode.androidannotations.annotations.NoTitle;
 import com.googlecode.androidannotations.annotations.ViewById;
 
@@ -29,48 +30,65 @@ public class Bemvindo extends Activity {
   @ViewById(R.id.tvBemvindo)
   TextView tvBemvindo;
 
+  @Extra("usuario")
+  String usuario;
+
   @ViewById(R.id.listaFavoritos)
   ListView listaFavoritos;
 
   @Bean
-  ListaSiteAdapter listaSiteAdapter;
-
-  @Extra("usuario")
-  String usuario;
+  ListaRequerimentoAdapter listaRequerimentoAdapter;
 
   @Bean
-  DownloadSites download;
-  
+  DownloadRequerimento downloadRequerimento;
+
+  @Bean
+  ListaEmentaAdapter listaEmentaAdapter;
+
+  @Bean
+  DownloadEmenta downloadEmenta;
+
   @AfterViews
   protected void iniciar() {
     tvBemvindo.setText("Seja bem-vindo " + usuario + ",");
-
-    listaFavoritos.setAdapter(listaSiteAdapter);
-
-    if (isOnline()) {
-      download.execute(this);
-    }
   }
 
-  public void atualizaItens(ArrayList<ESite> meusSites) {
-    NSite nSite = new NSite(this);
+  @Click(R.id.consultarSolicitacao)
+  public void entrar(View v) {
+    listaFavoritos.setAdapter(listaRequerimentoAdapter);
 
-    for (ESite site : meusSites) {
-      ESite eSiteAux = new ESite();
-      eSiteAux.setUrl(site.getUrl());
-      eSiteAux = nSite.consultarUrl(eSiteAux);
-
-      if (eSiteAux == null) {
-        nSite.incluir(site);
-      }
+    if (isOnline()) {
+      downloadRequerimento.execute(this);
     }
 
-    this.listaSiteAdapter.listaSites.clear();
-    this.listaSiteAdapter.listaSites.addAll(nSite.listarTodos());
-    // this.listaSiteAdapter.listaSites.addAll(meusSites);
-    Log.d("LIDO DO BANCO", this.listaSiteAdapter.listaSites.size() + " no banco de dados");
+  }
+
+  public void atualizaRequerimentos(ArrayList<ERequerimento> meusRequerimentos) {
+    this.listaRequerimentoAdapter.listaRequerimentos.clear();
+    this.listaRequerimentoAdapter.listaRequerimentos.addAll(meusRequerimentos);
+    Log.d("LIDO DO BANCO", this.listaRequerimentoAdapter.listaRequerimentos.size() + " no banco de dados");
     listaFavoritos.invalidateViews();
-    listaSiteAdapter.notifyDataSetChanged();
+    listaRequerimentoAdapter.notifyDataSetChanged();
+  }
+
+  @Click(R.id.consultarEmenta)
+  public void consultarEmenta(View v) {
+    listaFavoritos.setAdapter(listaEmentaAdapter);
+
+    if (isOnline()) {
+      downloadEmenta.execute(this);
+    }
+
+  }
+
+  public void atualizaEmentas(ArrayList<EEmenta> ementas) {
+    if (this.listaEmentaAdapter.ementas != null)
+      this.listaEmentaAdapter.ementas.clear();
+    else
+      this.listaEmentaAdapter.ementas = new ArrayList<EEmenta>();
+    this.listaEmentaAdapter.ementas.addAll(ementas);
+    listaFavoritos.invalidateViews();
+    listaEmentaAdapter.notifyDataSetChanged();
   }
 
   public boolean isOnline() {
@@ -81,13 +99,5 @@ public class Bemvindo extends Activity {
       return true;
     }
     return false;
-  }
-  
-  @ItemClick(R.id.listaFavoritos)
-  public void listaFavoritosItemCliked(ESite eSite) {
-//    Intent i = new Intent(getApplicationContext(), MeuNavegador_.class);
-//    i.putExtra("url", eSite.getUrl());
-//    startActivity(i);
-    MeuNavegador_.intent(this).url(eSite.getUrl()).start();
   }
 }

@@ -29,7 +29,7 @@ public class DownloadSites {
 		JSONObject json = parser.getJSONFromUrl(URL);
 		List<ESite> sites = parse(json);
 		dialog.dismiss();
-		minhaLista.atualizaItens((ArrayList<ESite>) sites);
+//		minhaLista.atualizaItens((ArrayList<ESite>) sites);
 	}
 	
 	private List<ESite> parse(JSONObject json) {
