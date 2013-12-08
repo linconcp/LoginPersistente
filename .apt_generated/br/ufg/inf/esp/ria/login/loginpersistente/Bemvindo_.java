@@ -11,13 +11,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
+import br.ufg.inf.esp.ria.login.loginpersistente.R.id;
 import br.ufg.inf.esp.ria.login.loginpersistente.R.layout;
-import br.ufg.inf.esp.ria.modelo.ESite;
 
 public final class Bemvindo_
     extends Bemvindo
@@ -35,30 +34,49 @@ public final class Bemvindo_
         injectExtras_();
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN, android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        download = DownloadSites_.getInstance_(this);
-        listaSiteAdapter = ListaSiteAdapter_.getInstance_(this);
+        downloadEmenta = DownloadEmenta_.getInstance_(this);
+        listaRequerimentoAdapter = ListaRequerimentoAdapter_.getInstance_(this);
+        downloadRequerimento = DownloadRequerimento_.getInstance_(this);
+        listaEmentaAdapter = ListaEmentaAdapter_.getInstance_(this);
     }
 
     private void afterSetContentView_() {
-        tvBemvindo = ((TextView) findViewById(br.ufg.inf.esp.ria.login.loginpersistente.R.id.tvBemvindo));
-        listaFavoritos = ((ListView) findViewById(br.ufg.inf.esp.ria.login.loginpersistente.R.id.listaFavoritos));
+        listaFavoritos = ((ListView) findViewById(id.listaFavoritos));
+        tvBemvindo = ((TextView) findViewById(id.tvBemvindo));
         {
-            AdapterView<?> view = ((AdapterView<?> ) findViewById(br.ufg.inf.esp.ria.login.loginpersistente.R.id.listaFavoritos));
+            View view = findViewById(id.consultarEmenta);
             if (view!= null) {
-                view.setOnItemClickListener(new OnItemClickListener() {
+                view.setOnClickListener(new OnClickListener() {
 
 
                     @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        listaFavoritosItemCliked(((ESite) parent.getAdapter().getItem(position)));
+                    public void onClick(View view) {
+                        Bemvindo_.this.consultarEmenta(view);
                     }
 
                 }
                 );
             }
         }
-        ((DownloadSites_) download).afterSetContentView_();
-        ((ListaSiteAdapter_) listaSiteAdapter).afterSetContentView_();
+        {
+            View view = findViewById(id.consultarSolicitacao);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        Bemvindo_.this.entrar(view);
+                    }
+
+                }
+                );
+            }
+        }
+        ((DownloadEmenta_) downloadEmenta).afterSetContentView_();
+        ((ListaRequerimentoAdapter_) listaRequerimentoAdapter).afterSetContentView_();
+        ((DownloadRequerimento_) downloadRequerimento).afterSetContentView_();
+        ((ListaEmentaAdapter_) listaEmentaAdapter).afterSetContentView_();
         iniciar();
     }
 

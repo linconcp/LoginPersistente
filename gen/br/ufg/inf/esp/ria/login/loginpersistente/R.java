@@ -24,27 +24,39 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f08000c;
+        public static final int action_settings=0x7f080014;
         public static final int button1=0x7f080004;
-        public static final int descricao=0x7f08000a;
-        public static final int descricaoLinha=0x7f080008;
+        public static final int consultarEmenta=0x7f080007;
+        public static final int consultarSolicitacao=0x7f080006;
+        public static final int dataCadastro=0x7f08000e;
+        public static final int dataSituacao=0x7f080010;
+        public static final int descricao=0x7f080012;
+        public static final int descricaoLinha=0x7f08000a;
+        public static final int disciplina=0x7f08000b;
+        public static final int ementa=0x7f08000c;
         public static final int entrada_senha=0x7f080003;
         public static final int entrada_usuario=0x7f080001;
-        public static final int listaFavoritos=0x7f080006;
-        public static final int nome=0x7f080009;
-        public static final int tituloLinha=0x7f080007;
+        public static final int listaFavoritos=0x7f080008;
+        public static final int nome=0x7f080011;
+        public static final int situacao=0x7f08000f;
+        public static final int tipoRequerimento=0x7f08000d;
+        public static final int tituloLinha=0x7f080009;
         public static final int tvBemvindo=0x7f080005;
         public static final int tvEmail=0x7f080000;
         public static final int tvSenha=0x7f080002;
-        public static final int webView=0x7f08000b;
+        public static final int webView=0x7f080013;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int bemvindo=0x7f030001;
-        public static final int linha_site=0x7f030002;
-        public static final int lista_site=0x7f030003;
-        public static final int navegador=0x7f030004;
-        public static final int principal=0x7f030005;
+        public static final int bemvindo2=0x7f030002;
+        public static final int linha_site=0x7f030003;
+        public static final int lista_ementa=0x7f030004;
+        public static final int lista_requerimento=0x7f030005;
+        public static final int lista_requerimentos=0x7f030006;
+        public static final int lista_site=0x7f030007;
+        public static final int navegador=0x7f030008;
+        public static final int principal=0x7f030009;
     }
     public static final class menu {
         public static final int main=0x7f070000;
@@ -53,10 +65,12 @@ public final class R {
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
         public static final int botaoEntrar=0x7f050004;
+        public static final int consultarEmenta=0x7f050006;
+        public static final int consultarSolicitacao=0x7f050005;
         public static final int entrada_email=0x7f050002;
         public static final int entrada_senha=0x7f050003;
-        public static final int title_activity_bemvindo=0x7f050005;
-        public static final int title_activity_meunavegador=0x7f050006;
+        public static final int title_activity_bemvindo=0x7f050007;
+        public static final int title_activity_meunavegador=0x7f050008;
     }
     public static final class style {
         /** 
@@ -68,17 +82,6 @@ public final class R {
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
         
-
-        Base application theme for API 11+. This theme completely replaces
-        AppBaseTheme from res/values/styles.xml on API 11+ devices.
-    
- API 11 theme customizations can go here. 
-
-        Base application theme for API 14+. This theme completely replaces
-        AppBaseTheme from BOTH res/values/styles.xml and
-        res/values-v11/styles.xml on API 14+ devices.
-    
- API 14 theme customizations can go here. 
          */
         public static final int AppBaseTheme=0x7f060000;
         /**  Application theme. 

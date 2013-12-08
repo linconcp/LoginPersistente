@@ -15,7 +15,7 @@ import android.view.Window;
 import android.widget.EditText;
 import br.ufg.inf.esp.ria.login.loginpersistente.R.id;
 import br.ufg.inf.esp.ria.login.loginpersistente.R.layout;
-import br.ufg.inf.esp.ria.modelo.preferencias.ELogado_;
+import br.ufg.inf.esp.ria.modelo.ELogado_;
 
 public final class Principal_
     extends Principal
